@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import SampleRouting from './components/SampleRouting';
 import App from './components/App';
+import NotFound from './components/NotFound'
 
 
 const routing = (
@@ -18,8 +19,11 @@ const routing = (
                     <Link to="/anotherPage">Another Page</Link>
                 </li>
             </ul>
-            <Route exact path="/" component={App}/>
-            <Route path="/anotherPage" component={SampleRouting} />
+            <Switch>
+                <Route exact path="/" component={App}/>
+                <Route path="/anotherPage" component={SampleRouting} />
+                <Route component={NotFound} />
+            </Switch>
         </div>
     </Router>
 )
