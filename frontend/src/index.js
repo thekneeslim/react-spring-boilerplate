@@ -10,8 +10,16 @@ import App from './components/App';
 const routing = (
     <Router>
         <div>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/anotherPage">Another Page</Link>
+                </li>
+            </ul>
             <Route exact path="/" component={App}/>
-            <Route path="/test" component={SampleRouting} />
+            <Route path="/anotherPage" component={SampleRouting} />
         </div>
     </Router>
 )
